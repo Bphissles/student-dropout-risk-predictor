@@ -13,7 +13,7 @@ useHead({ title: 'Home | Student Dropout Risk Predictor' })
         </p>
         <div class="d-flex gap-2 flex-wrap">
           <NuxtLink to="/about" class="btn btn-primary">Learn about the project</NuxtLink>
-          <a href="https://github.com/Bphissles/cs3120-final-project" class="btn btn-secondary" target="_blank">View notebook on GitHub</a>
+          <a href="https://github.com/Bphissles/cs3120-final-project/blob/main/research-space/final-project-milestone.ipynb" class="btn btn-secondary" target="_blank">View notebook on GitHub</a>
           <button class="btn btn-outline-secondary" type="button" disabled aria-disabled="true" title="Coming soon">
             Upload CSV (coming soon)
           </button>
@@ -71,7 +71,7 @@ useHead({ title: 'Home | Student Dropout Risk Predictor' })
 
     <div class="card shadow-sm mb-4">
       <div class="card-body">
-        <h2 class="h4 mb-2">Whats going on under the hood (Kind of)</h2>
+        <h2 class="h4 mb-2">Whats going on under the hood (Not really though, I just wanted the page to have a scroll so the transition to the about page was smooth)</h2>
 <pre>
   param_dist = {
     'n_estimators': randint(100, 500),
