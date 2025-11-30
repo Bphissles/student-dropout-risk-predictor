@@ -16,7 +16,7 @@ useHead({ title: 'Presentation | Student Dropout Risk Predictor' })
       <div class="col-lg-8 mx-auto">
         <div class="card shadow-sm mb-4">
           <div class="card-header bg-primary text-white">
-            <h2 class="h4 mb-0">Project Overview</h2>
+            <h2 class="h3 mb-0">Project Overview</h2>
           </div>
           <div class="card-body">
             <p>
@@ -33,7 +33,7 @@ useHead({ title: 'Presentation | Student Dropout Risk Predictor' })
 
         <div class="card shadow-sm mb-4">
           <div class="card-header bg-secondary text-white">
-            <h2 class="h4 mb-0">Data Source</h2>
+            <h2 class="h3 mb-0">Data Source</h2>
           </div>
           <div class="card-body">
             <p>
@@ -52,7 +52,7 @@ useHead({ title: 'Presentation | Student Dropout Risk Predictor' })
 
         <div class="card shadow-sm mb-4">
           <div class="card-header bg-info text-white">
-            <h2 class="h4 mb-0">Model Architecture</h2>
+            <h2 class="h3 mb-0">Model Architecture</h2>
           </div>
           <div class="card-body">
             <h5 class="card-title">Random Forest Classifier</h5>
@@ -73,7 +73,7 @@ useHead({ title: 'Presentation | Student Dropout Risk Predictor' })
 
         <div class="card shadow-sm mb-4">
           <div class="card-header bg-success text-white">
-            <h2 class="h4 mb-0">App Functionality</h2>
+            <h2 class="h3 mb-0">App Functionality</h2>
           </div>
           <div class="card-body">
             <p>The web application provides two main modes of interaction:</p>

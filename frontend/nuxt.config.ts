@@ -8,6 +8,12 @@ export default defineNuxtConfig({
       apiBase: process.env.API_URL || 'https://cs3120-final-project.onrender.com/api'
     }
   },
-
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'en'
+      }
+    }
+  },
   css: ['~/assets/scss/theme.scss']
 })

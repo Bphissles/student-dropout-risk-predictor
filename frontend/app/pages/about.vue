@@ -18,7 +18,7 @@ useHead({ title: 'About | Student Dropout Risk Predictor' })
 
       <div class="card shadow-sm mb-4">
         <div class="card-body">
-          <h2 class="h4">Dataset</h2>
+          <h2 class="h3">Dataset</h2>
           <p class="mb-2">
             Source: <a href="https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success" target="_blank" rel="noopener">UCI ML Repository — Predict Students Dropout and Academic Success</a>
           </p>
@@ -54,7 +54,7 @@ useHead({ title: 'About | Student Dropout Risk Predictor' })
 
       <div class="card shadow-sm mb-4">
         <div class="card-body">
-          <h2 class="h4">App Functionality</h2>
+          <h2 class="h3">App Functionality</h2>
           <ul class="mb-3">
             <li><strong>Single-student form:</strong> Client-side validation with clear messaging.</li>
             <li><strong>Batch CSV upload:</strong> Errors listed in a table with guidance per-row.</li>
@@ -62,7 +62,7 @@ useHead({ title: 'About | Student Dropout Risk Predictor' })
             <li><strong>Export:</strong> Download processed results as CSV.</li>
           </ul>
 
-          <h3 class="h5">Explicit Features</h3>
+          <h2 class="h5">Explicit Features</h2>
           <div class="row g-2">
             <div class="col-sm-6 col-lg-3">
               <div class="badge bg-primary-subtle border border-primary text-primary w-100 py-2">Form processing</div>
@@ -82,7 +82,7 @@ useHead({ title: 'About | Student Dropout Risk Predictor' })
 
       <div class="card shadow-sm">
         <div class="card-body">
-          <h2 class="h4">Tools & Technologies</h2>
+          <h2 class="h3">Tools & Technologies</h2>
           <div class="row">
             <div class="col-md-6">
               <ul class="list-group list-group-flush">
@@ -103,9 +103,3 @@ useHead({ title: 'About | Student Dropout Risk Predictor' })
     </div>
   </div>
 </template>
-
-<!-- <style scoped>
-h1, .h1, .h2, .h3, .h4, .h5 {
-  scroll-margin-top: 6rem;
-}
-</style> -->
