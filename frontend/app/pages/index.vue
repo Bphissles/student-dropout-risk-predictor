@@ -11,7 +11,7 @@ const predictionResult = ref(null)
 const batchResults = ref(null)
 
 // API Base URL - in production this would be an env var
-const API_URL = 'http://127.0.0.1:5000/api'
+const API_URL = 'https://cs3120-final-project.onrender.com/api'
 
 // --- Categorical Options ---
 const categoricalOptions = {

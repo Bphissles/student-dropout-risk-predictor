@@ -6,7 +6,14 @@ from model import DropoutPredictor
 import io
 
 app = Flask(__name__)
-CORS(app) # Enable CORS for all routes
+# Configure CORS to allow specific origins
+# Replace with your actual frontend URLs
+allowed_origins = [
+    "http://localhost:3000",
+    "https://www.benhislop.com",
+    "https://cs3120-final-project.netlify.app" # Assuming netlify deploy just in case
+]
+CORS(app, resources={r"/api/*": {"origins": allowed_origins}})
 
 # Initialize predictor
 predictor = DropoutPredictor()
