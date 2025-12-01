@@ -37,13 +37,13 @@ const formFields = [
   { name: 'Course', default: 171 },
   { name: 'Age at enrollment', default: 20 },
   { name: 'Tuition fees up to date', default: 1 },
-  { name: 'Curricular units 1st sem (evaluations)', default: 0 },
-  { name: 'Curricular units 1st sem (approved)', default: 0 },
-  { name: 'Curricular units 1st sem (grade)', default: 0.0 },
-  { name: 'Curricular units 2nd sem (enrolled)', default: 0 },
-  { name: 'Curricular units 2nd sem (evaluations)', default: 0 },
-  { name: 'Curricular units 2nd sem (approved)', default: 0 },
-  { name: 'Curricular units 2nd sem (grade)', default: 0.0 }
+  { name: 'Curricular units 1st sem (evaluations)', default: 5 },
+  { name: 'Curricular units 1st sem (approved)', default: 4 },
+  { name: 'Curricular units 1st sem (grade)', default: 12.5 },
+  { name: 'Curricular units 2nd sem (enrolled)', default: 5 },
+  { name: 'Curricular units 2nd sem (evaluations)', default: 5 },
+  { name: 'Curricular units 2nd sem (approved)', default: 4 },
+  { name: 'Curricular units 2nd sem (grade)', default: 12.5 }
 ]
 
 // Initialize form data with defaults
@@ -172,7 +172,7 @@ const downloadCSV = () => {
         <div class="d-flex gap-2 flex-wrap">
           <a href="#single-prediction" class="btn btn-primary">Start Prediction</a>
           <a href="/student_template.csv" download class="btn btn-outline-secondary">
-            <i class="bi bi-download me-1"></i> Download Template CSV
+            <i class="bi bi-download me-1"></i> Download Test CSV
           </a>
         </div>
       </div>
