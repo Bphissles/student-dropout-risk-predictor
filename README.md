@@ -43,7 +43,7 @@ cs3120-final-project/
 ## Local Development
 
 ### Prerequisites
-- **Node.js** 18+
+- **Node.js** v22 or higher
 - **Python** 3.10+
 
 ### Quick Start
