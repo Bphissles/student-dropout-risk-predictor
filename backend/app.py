@@ -18,6 +18,7 @@ CORS(app, resources={r"/api/*": {"origins": allowed_origins}})
 # Initialize predictor
 predictor = DropoutPredictor()
 # Get directory of current script
+# Helps with working between Local and Production environments
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "model_artifacts.joblib")
 
@@ -71,16 +72,11 @@ def predict_file():
         
     try:
         # Read CSV
-        # Note: The proposal mentions semicolon separator for the source data, 
-        # but user uploads might be comma or semicolon. Let's try to detect or assume comma for standard CSVs
-        # usually, but the project data uses semicolon.
-        # I will try reading with pandas default (comma) first, if that fails (1 col), try semicolon.
+        # Note: There's work here to address that the data originally was ';', but user uploads might be ',' or ';'.
         
         stream = io.StringIO(file.stream.read().decode("UTF8"), newline=None)
-        # Reset stream position
         stream.seek(0)
         
-        # Try sniffing
         try:
             dialect = pd.read_csv(stream, nrows=5).shape[1]
             stream.seek(0)
@@ -96,7 +92,6 @@ def predict_file():
         results = predictor.predict(df)
         
         # Combine results with original data for the response?
-        # Or just return results. The proposal says "output a list of students and their predicted dropout risk".
         # It's helpful to return enough info to identify the student.
         
         response_data = []
@@ -106,10 +101,7 @@ def predict_file():
             row_data.update(res)
             response_data.append(row_data)
             
-        # Sort by confidence of "Dropout" if possible?
-        # The proposal says "sorted by predicted dropout risk"
-        # "Dropout" is a class label. I need to look at probabilities["Dropout"]
-        
+        # Sort by confidence of "Dropout"
         # Filter for valid results that have probabilities
         valid_results = [r for r in response_data if 'probabilities' in r]
         
@@ -122,17 +114,6 @@ def predict_file():
         
     except Exception as e:
         return jsonify({"error": f"Error processing file: {str(e)}"}), 500
-
-@app.route('/api/retrain', methods=['POST'])
-def retrain_model():
-    # Hidden endpoint to trigger retraining if needed
-    try:
-        from train import main as train_main
-        train_main()
-        load_model()
-        return jsonify({"message": "Model retrained and reloaded"})
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

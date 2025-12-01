@@ -18,13 +18,28 @@ const config = useRuntimeConfig()
 const API_URL = config.public.apiBase
 
 // --- Categorical Options ---
+// ID mapping comes from Variables Table 
+// Original dataset: https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success
+// https://github.com/Bphissles/cs3120-final-project/blob/main/research-space/variables-table.md
 const categoricalOptions = {
   course: {
-    33: 'Biofuel Production Technologies', 171: 'Animation and Multimedia Design', 8014: 'Social Service (evening attendance)',
-    9003: 'Agronomy', 9070: 'Communication Design', 9085: 'Veterinary Nursing', 9119: 'Informatics Engineering',
-    9130: 'Equinculture', 9147: 'Management', 9238: 'Social Service', 9254: 'Tourism', 9500: 'Nursing',
-    9556: 'Oral Hygiene', 9670: 'Advertising and Marketing Management', 9773: 'Journalism and Communication',
-    9853: 'Basic Education', 9991: 'Management (evening attendance)'
+    33: 'Biofuel Production Technologies', 
+    171: 'Animation and Multimedia Design', 
+    8014: 'Social Service (evening attendance)',
+    9003: 'Agronomy', 
+    9070: 'Communication Design', 
+    9085: 'Veterinary Nursing', 
+    9119: 'Informatics Engineering',
+    9130: 'Equinculture', 
+    9147: 'Management', 
+    9238: 'Social Service', 
+    9254: 'Tourism', 
+    9500: 'Nursing',
+    9556: 'Oral Hygiene', 
+    9670: 'Advertising and Marketing Management', 
+    9773: 'Journalism and Communication',
+    9853: 'Basic Education', 
+    9991: 'Management (evening attendance)'
   },
   yesNo: {
     1: 'Yes', 0: 'No'
@@ -32,7 +47,6 @@ const categoricalOptions = {
 }
 
 // --- Form Schema ---
-// Reduced to Top 10 most predictive features
 const formFields = [
   { name: 'Course', default: 171 },
   { name: 'Age at enrollment', default: 20 },
@@ -53,7 +67,7 @@ formFields.forEach(field => {
 })
 
 // --- Actions ---
-
+// API Call to /api/predict
 const handleSinglePredict = async () => {
   loading.value = true
   error.value = null
@@ -89,6 +103,7 @@ const handleSinglePredict = async () => {
 
 const fileInput = ref(null)
 
+// API Call to /api/predict-file
 const handleFileUpload = async (event) => {
   const file = event.target.files[0]
   if (!file) return
@@ -122,6 +137,7 @@ const handleFileUpload = async (event) => {
   }
 }
 
+// --- CSV Report generation ---
 const downloadCSV = () => {
   if (!batchResults.value || !batchResults.value.length) return
   
@@ -172,7 +188,10 @@ const downloadCSV = () => {
         <div class="d-flex gap-2 flex-wrap">
           <a href="#single-prediction" class="btn btn-primary">Start Prediction</a>
           <a href="/student_template.csv" download class="btn btn-outline-secondary">
-            <i class="bi bi-download me-1"></i> Download Test CSV
+            Download Test CSV
+          </a>
+          <a href="/student_template_bad.csv" download class="btn btn-outline-danger">
+            Download Bad Test CSV
           </a>
         </div>
       </div>

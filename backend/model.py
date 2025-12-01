@@ -89,15 +89,9 @@ class DropoutPredictor:
             df = pd.DataFrame(data)
         else:
             df = data.copy()
-            
-        # Ensure columns match (handling missing or extra columns if necessary, though strict is better)
-        # For now assume input matches schema
         
         # Clean columns just in case
         df = self.clean_data(df)
-        
-        # Check for missing columns and add them as 0/NaN if needed, or raise error
-        # Ideally the input form matches the schema exactly.
         
         # Transform categorical
         if self.categorical_columns:

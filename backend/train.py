@@ -3,7 +3,6 @@ from model import DropoutPredictor
 
 def main():
     # Path to data
-    # Assuming this script is run from the project root
     data_path = "research-space/final-project-data.csv"
     
     if not os.path.exists(data_path):
