@@ -15,6 +15,7 @@ useHead({ title: 'Presentation | Student Dropout Risk Predictor' })
           <a class="btn btn-primary" target="_blank" rel="noopener" href="https://cs3120-final-project.onrender.com/api/health">Backend Health Check</a>
           <a class="btn btn-primary" target="_blank" rel="noopener" href="https://github.com/Bphissles/cs3120-final-project">GitHub Repository</a>
           <a class="btn btn-primary" target="_blank" rel="noopener" href="https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success">Dataset</a>
+          <a class="btn btn-primary" target="_blank" rel="noopener" download href="/Ben_Hislop_Student_Dropout_Risk_Predictor.pdf">Presentation deck</a>
         </div>
       </div>
     </div>
