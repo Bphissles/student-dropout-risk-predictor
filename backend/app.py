@@ -11,7 +11,8 @@ app = Flask(__name__)
 allowed_origins = [
     "http://localhost:3000",
     "https://www.benhislop.com",
-    "https://cs3120-final-project.netlify.app"
+    "https://cs3120-final-project.netlify.app",
+    "https://student-dropout-risk-predictor.netlify.app/"
 ]
 CORS(app, resources={r"/api/*": {"origins": allowed_origins}})
 
